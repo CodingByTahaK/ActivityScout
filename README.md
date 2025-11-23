@@ -2,7 +2,7 @@
 
 > **Find programs kids love. Parents can afford. Applications made easy.**
 
-Built for the **Anthropic AI Hackathon 2025** - Track 2 (Human-Centered AI) & Track 3 (Adaptive Matching)
+Built for the **Anthropic AI Hackathon 2025** - Track 2 (Human-Centered AI)
 
 [![Built with Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![Powered by Claude](https://img.shields.io/badge/Claude-Sonnet_4.5-orange?style=flat-square)](https://www.anthropic.com/)
@@ -48,8 +48,8 @@ She wants her 8-year-old daughter Maya to join a soccer program. Maya loves bein
 - **Visual affordability badges**: Instant recognition of 🆓 FREE, 💰 Financial Aid, 📋 Sliding Scale programs
 - **Real impact**: Families find hidden opportunities in seconds, not hours
 
-### ✅ **Track 3: Adaptive Matching** (Smart Personalization)
-- **9-dimensional program values analysis**: Claude analyzes each program's website, mission, and content to detect what they truly value (diversity, leadership, creativity, academic excellence, community service, athleticism, innovation, teamwork, independence)
+### ✅ **Smart Personalization**
+- **9-dimensional program values analysis**: AI analyzes each program's website, mission, and content to detect what they truly value (diversity, leadership, creativity, academic excellence, community service, athleticism, innovation, teamwork, independence)
 - **4-factor match scoring**: 40% interest alignment + 40% strengths alignment + 10% special needs + 10% budget compatibility = personalized fit score (0-100)
 - **Transparent match reasons**: Parents see WHY each program is a good fit for their child
 - **One-click applications**: AI extracts direct application URLs from program websites
@@ -64,11 +64,11 @@ She wants her 8-year-old daughter Maya to join a soccer program. Maya loves bein
 - Glassmorphism design language
 - Framer Motion animations for smooth interactions
 
-### 2. Child Profile Creation (Track 3)
+### 2. Child Profile Creation
 *[Screenshot: Child profile modal with form fields]*
 - Capture interests, strengths, needs, goals, and budget
 - Persistent storage with localStorage
-- Confetti celebration on profile save
+- Clean, accessible form interface
 
 ### 3. Equity Filters (Track 2)
 *[Screenshot: Advanced filters section with affordability checkboxes]*
@@ -76,13 +76,13 @@ She wants her 8-year-old daughter Maya to join a soccer program. Maya loves bein
 - Active filter indicator
 - Integrated with main search workflow
 
-### 4. Match Scores & Results (Track 3)
+### 4. Match Scores & Results
 *[Screenshot: Program card with 92 match score badge and match reasons]*
 - Color-coded match badges (Excellent: green, Good: cyan, Fair: orange, Weak: red)
 - Personalized "Why This Matches [Child Name]" section
 - Affordability badges displayed prominently
 
-### 5. One-Click Application (Track 3)
+### 5. One-Click Application
 *[Screenshot: Apply Now button and contact section]*
 - Prominent "Apply Now" CTA with gradient styling
 - Direct links to application pages
@@ -126,7 +126,7 @@ app/
 
 ## 🧠 How It Works
 
-### **1. Profile Creation (Track 3)**
+### **1. Profile Creation**
 ```typescript
 interface ChildProfile {
   name: string;
@@ -181,9 +181,9 @@ Search 4: "Toronto recreation soccer free low income"
     frequency: "per month",
     note: "Sliding scale available, scholarships for low-income families"
   },
-  hasFinancialAid: true,  // 🔑 Track 2 innovation
-  applicationUrl: "https://...",  // 🔑 Track 3 innovation
-  values: {  // 🔑 Track 3 innovation
+  hasFinancialAid: true,  // 🔑 Affordability tracking
+  applicationUrl: "https://...",  // 🔑 Direct application links
+  values: {  // 🔑 Program values analysis
     diversity: 75,
     teamwork: 100,
     creativity: 85,
@@ -192,7 +192,7 @@ Search 4: "Toronto recreation soccer free low income"
 }
 ```
 
-### **4. Match Scoring Algorithm (Track 3)**
+### **4. Match Scoring Algorithm**
 ```typescript
 function calculateMatchScore(profile: ChildProfile, program: EnhancedProgram) {
   // 1. Interest Alignment (40%)
@@ -259,8 +259,8 @@ function calculateMatchScore(profile: ChildProfile, program: EnhancedProgram) {
 ### **Installation**
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/opportunitymatch-ai.git
-cd opportunitymatch-ai
+git clone https://github.com/YOUR_USERNAME/kids-programs-finder.git
+cd kids-programs-finder
 
 # Install dependencies
 npm install
@@ -296,11 +296,11 @@ npm run dev
 
 **Impact:** Makes recreational programs accessible to families who need them most
 
-### **Track 3: Adaptive Matching** ✅
+### **Smart Personalization Features** ✅
 **Problem Solved:** Parents waste hours guessing which programs fit their child
 
 **AI Innovation:**
-- 9-dimensional program values analysis (Claude analyzes mission, content, descriptions)
+- 9-dimensional program values analysis (AI analyzes mission, content, descriptions)
 - 4-factor personalized match scoring (interests, strengths, needs, budget)
 - Transparent match reasons for explainability
 - One-click application URL extraction
@@ -311,10 +311,10 @@ npm run dev
 
 ## 🛣️ Roadmap
 
-### **v1.1 - AI Essay Generator** (Track 3 Extension)
-- Generate personalized application essays based on child profile
-- Analyze program values to tailor essay content
-- Increase application completion rates for low-income families
+### **v1.1 - Enhanced Application Support**
+- Pre-fill application forms with saved profile data
+- Email templates for program inquiries
+- Application deadline tracking and reminders
 
 ### **v1.2 - Multi-Language Support**
 - Spanish, French, Mandarin, Arabic translations
@@ -359,8 +359,7 @@ This project was built for the Anthropic AI Hackathon, but contributions are wel
 ## 📧 Contact
 
 **Built by:** Taha Khan
-**Demo:** http://localhost:3001 (development)
-**GitHub:** https://github.com/yourusername/opportunitymatch-ai
+**GitHub:** https://github.com/YOUR_USERNAME/kids-programs-finder
 
 ---
 

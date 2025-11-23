@@ -426,8 +426,6 @@ export default function Home() {
         >
           <div className="inline-block glass rounded-full px-8 md:px-10 py-5 md:py-6 border border-[#00ff88]/20">
             <p className="text-gray-400 text-sm">
-              <span className="text-[#00ff88] font-bold">Powered by Claude AI</span>
-              <span className="mx-2">•</span>
               Search results generated in real-time from web sources
             </p>
           </div>
