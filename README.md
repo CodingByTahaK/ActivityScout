@@ -17,9 +17,8 @@ Built for the **Anthropic AI Hackathon 2025** - Track 2 (Human-Centered AI)
 She wants her 8-year-old daughter Maya to join a soccer program. Maya loves being active, thrives in team environments, and needs to build confidence. But Sarah faces three impossible challenges:
 
 ### 1️⃣ **The Affordability Maze**
-- 73% of low-income families report difficulty finding affordable recreational programs
+- low-income families report difficulty finding affordable recreational programs
 - Financial aid information is buried in PDFs, hidden in footnotes, or requires calling during business hours
-- Searching "free soccer programs Toronto" returns paid programs that mention "free trial"
 - Scholarships exist, but finding them requires insider knowledge
 
 ### 2️⃣ **The Fit Problem**
@@ -45,7 +44,7 @@ She wants her 8-year-old daughter Maya to join a soccer program. Maya loves bein
 ### ✅ **Track 2: Equity-Focused Search** (Human-Centered AI)
 - **Explicit affordability filters**: Free only, Financial aid available, Subsidized/sliding scale
 - **AI-powered scholarship detection**: Claude searches program websites for keywords like "scholarship," "financial aid," "bursary," "sliding scale," "income-based" that traditional search engines miss
-- **Visual affordability badges**: Instant recognition of 🆓 FREE, 💰 Financial Aid, 📋 Sliding Scale programs
+- **Visual affordability badges**: Instant recognition of FREE, Financial Aid, Sliding Scale programs
 - **Real impact**: Families find hidden opportunities in seconds, not hours
 
 ### ✅ **Smart Personalization**
@@ -53,40 +52,6 @@ She wants her 8-year-old daughter Maya to join a soccer program. Maya loves bein
 - **4-factor match scoring**: 40% interest alignment + 40% strengths alignment + 10% special needs + 10% budget compatibility = personalized fit score (0-100)
 - **Transparent match reasons**: Parents see WHY each program is a good fit for their child
 - **One-click applications**: AI extracts direct application URLs from program websites
-
----
-
-## 🎨 Screenshots
-
-### 1. Landing Page - Cyberpunk Aesthetic
-*[Screenshot: Hero section with search bar and tagline]*
-- Clean, modern UI with bold neon colors (green, cyan, red)
-- Glassmorphism design language
-- Framer Motion animations for smooth interactions
-
-### 2. Child Profile Creation
-*[Screenshot: Child profile modal with form fields]*
-- Capture interests, strengths, needs, goals, and budget
-- Persistent storage with localStorage
-- Clean, accessible form interface
-
-### 3. Equity Filters (Track 2)
-*[Screenshot: Advanced filters section with affordability checkboxes]*
-- Three affordability filters with clear descriptions
-- Active filter indicator
-- Integrated with main search workflow
-
-### 4. Match Scores & Results
-*[Screenshot: Program card with 92 match score badge and match reasons]*
-- Color-coded match badges (Excellent: green, Good: cyan, Fair: orange, Weak: red)
-- Personalized "Why This Matches [Child Name]" section
-- Affordability badges displayed prominently
-
-### 5. One-Click Application
-*[Screenshot: Apply Now button and contact section]*
-- Prominent "Apply Now" CTA with gradient styling
-- Direct links to application pages
-- Full contact information (phone, email, website)
 
 ---
 
@@ -225,30 +190,6 @@ function calculateMatchScore(profile: ChildProfile, program: EnhancedProgram) {
 
 ---
 
-## 📊 Impact Metrics
-
-### **For Parents:**
-- ⚡ **3-4x more thorough** than single-search tools
-- ⏰ **Saves 5+ hours** of research per search
-- 💰 **Surfaces hidden financial aid** that families would miss
-- 🎯 **92% match accuracy** for child fit (based on multi-factor scoring)
-- 📝 **One-click applications** vs 30-minute hunts for registration links
-
-### **For Communities:**
-- 🌍 **Increases equity** by making affordability transparent
-- 👨‍👩‍👧‍👦 **Reduces barriers** for low-income families
-- 📈 **Boosts program enrollment** by improving discoverability
-- 🤝 **Connects kids to opportunities** they deserve
-
-### **Technical Innovation:**
-- 🔍 **Multi-search strategy**: 3-4 web searches per query with varied terms
-- 🧠 **9-dimensional values analysis**: First tool to analyze what programs value
-- 💡 **Explicit financial aid detection**: AI searches for scholarship keywords
-- 🎨 **Visual affordability system**: Instant recognition with color-coded badges
-- 📱 **Real-time streaming**: SSE for live search progress
-
----
-
 ## 🚦 Getting Started
 
 ### **Prerequisites**
@@ -312,7 +253,7 @@ npm start
 
 ## 🏆 Hackathon Submission
 
-### **Track 2: Human-Centered AI** ✅
+### **Track 2: Human-Centered AI** 
 **Problem Solved:** Low-income families struggle to find affordable programs
 
 **AI Innovation:**
@@ -323,7 +264,7 @@ npm start
 
 **Impact:** Makes recreational programs accessible to families who need them most
 
-### **Smart Personalization Features** ✅
+### **Smart Personalization Features** 
 **Problem Solved:** Parents waste hours guessing which programs fit their child
 
 **AI Innovation:**
@@ -367,7 +308,6 @@ Built with:
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library for React
 
-Inspired by families who deserve better tools to access opportunities for their kids.
 
 ---
 
@@ -385,10 +325,10 @@ This project was built for the Anthropic AI Hackathon, but contributions are wel
 
 ## 📧 Contact
 
-**Built by:** Taha Khan
+**Built by:** Taha Karim
 **GitHub:** https://github.com/CodingByTahaK/ActivityScout
-**Live Demo:** [Coming Soon - Deploy to Vercel]
+**Live Demo:** https://activity-scout.vercel.app/
 
 ---
 
-**ActivityScout** - Because every child deserves their perfect match. 🎯
+**ActivityScout** - Because every child deserves to take part in extracurricular activities. 🎯
