@@ -1,26 +1,449 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cyber Sports Theme Colors */
+  --bg-dark: #0f0f23;
+  --bg-card: #1a1a2e;
+  --primary: #00ff88;
+  --secondary: #ff5c8d; /* Improved contrast from #ff2e63 */
+  --accent: #08d9d6;
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8b8; /* Improved contrast from #a0a0a0 */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #00ff88 0%, #08d9d6 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff5c8d 0%, #ff6b9d 100%);
+  --gradient-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+  --gradient-card: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(8, 217, 214, 0.1) 100%);
+
+  /* Shadows & Glows */
+  --glow-primary: 0 0 20px rgba(0, 255, 136, 0.5);
+  --glow-secondary: 0 0 20px rgba(255, 92, 141, 0.5);
+  --glow-accent: 0 0 20px rgba(8, 217, 214, 0.5);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.animated-bg {
+  background: var(--gradient-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Glow Effects */
+.glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+.glow-secondary {
+  box-shadow: var(--glow-secondary);
+}
+
+.glow-accent {
+  box-shadow: var(--glow-accent);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated Gradient Border */
+.gradient-border {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: 16px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient-border-animated::before {
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+}
+
+/* Pulse Animation */
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+  }
+}
+
+/* Loading Animations */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Stagger Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: var(--bg-dark);
+}
+
+/* Focus Rings */
+*:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Button Base Styles */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Link Styles */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+  text-shadow: var(--glow-primary);
+}
+
+/* Utility Classes */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   Google Places Autocomplete Dark Theme
+   ============================================ */
+
+/* Main container */
+.pac-container {
+  background-color: #1a1a2e !important;
+  border: 2px solid rgba(8, 217, 214, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(8, 217, 214, 0.3) !important;
+  margin-top: 4px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  z-index: 9999 !important;
+  animation: pac-fadeIn 0.2s ease-out !important;
+}
+
+/* Remove default Google styling */
+.pac-container:after {
+  background-image: none !important;
+  height: 0 !important;
+}
+
+/* Individual suggestion items */
+.pac-item {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  padding: 12px 16px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+/* First item - no top border */
+.pac-item:first-child {
+  border-top: none !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+/* Last item - rounded bottom */
+.pac-item:last-child {
+  border-radius: 0 0 10px 10px !important;
+}
+
+/* Hover state - cyan glow effect */
+.pac-item:hover {
+  background-color: rgba(8, 217, 214, 0.15) !important;
+  border-left: 3px solid #08d9d6 !important;
+  padding-left: 13px !important;
+}
+
+/* Selected/highlighted item */
+.pac-item-selected,
+.pac-item-selected:hover {
+  background-color: rgba(8, 217, 214, 0.2) !important;
+  border-left: 3px solid #00ff88 !important;
+  padding-left: 13px !important;
+}
+
+/* Matched query text (bold part) */
+.pac-item-query {
+  color: #00ff88 !important;
+  font-weight: 600 !important;
+}
+
+/* Regular text */
+.pac-matched {
+  color: #a0a0a0 !important;
+  font-size: 14px !important;
+}
+
+/* Location icon */
+.pac-icon {
+  background-image: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: 2px !important;
+  margin-right: 12px !important;
+}
+
+/* Custom location icon using CSS */
+.pac-icon:before {
+  content: "📍";
+  font-size: 16px;
+  display: block;
+}
+
+/* Powered by Google logo area */
+.pac-logo:after,
+.hdpi.pac-logo:after {
+  background-image: none !important;
+  content: "Powered by Google" !important;
+  color: #a0a0a0 !important;
+  font-size: 11px !important;
+  padding: 8px 16px !important;
+  display: block !important;
+  text-align: right !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Animation when dropdown appears */
+@keyframes pac-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .pac-item {
+    padding: 14px 16px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+
+  .pac-item-query {
+    font-size: 16px !important;
+  }
+}
+
+/* ============================================
+   Reduced Motion Support (Accessibility)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable specific problematic animations */
+  .animated-bg::before {
+    animation: none !important;
+  }
+
+  .gradient-border-animated::before {
+    animation: none !important;
+  }
+
+  .pulse-glow {
+    animation: none !important;
+  }
+
+  .hover-lift:hover {
+    transform: none !important;
+  }
+
+  button:active {
+    transform: none !important;
+  }
+
+  .animate-fadeIn,
+  .animate-slideIn,
+  .animate-float {
+    animation: none !important;
+  }
 }
