@@ -1,4 +1,4 @@
-# OpportunityMatch AI 🎯
+# ActivityScout 🎯
 
 > **Find programs kids love. Parents can afford. Applications made easy.**
 
@@ -40,7 +40,7 @@ She wants her 8-year-old daughter Maya to join a soccer program. Maya loves bein
 
 ## 🚀 The Solution
 
-**OpportunityMatch AI** is the world's first AI-powered program finder that solves all three problems:
+**ActivityScout** is an AI-powered program finder that solves all three problems:
 
 ### ✅ **Track 2: Equity-Focused Search** (Human-Centered AI)
 - **Explicit affordability filters**: Free only, Financial aid available, Subsidized/sliding scale
@@ -257,20 +257,47 @@ function calculateMatchScore(profile: ChildProfile, program: EnhancedProgram) {
 - Anthropic API key with Claude Sonnet 4.5 access
 
 ### **Installation**
+
+#### **1. Clone the repository**
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/kids-programs-finder.git
-cd kids-programs-finder
+git clone https://github.com/CodingByTahaK/ActivityScout.git
+cd ActivityScout
+```
 
-# Install dependencies
+#### **2. Install dependencies**
+```bash
 npm install
+```
 
-# Set up environment variables
-cp .env.example .env.local
-# Add your ANTHROPIC_API_KEY to .env.local
+#### **3. Set up environment variables**
+Create a `.env.local` file in the root directory:
+```bash
+# Required
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
 
-# Run the development server
+# Optional (for Google Places ratings and enhanced search)
+GOOGLE_PLACES_API_KEY=your_google_places_api_key_here
+```
+
+**Getting API Keys:**
+- **Anthropic API Key:** Sign up at https://console.anthropic.com/ and create an API key
+- **Google Places API Key (Optional):**
+  1. Go to https://console.cloud.google.com/
+  2. Create a new project or select existing
+  3. Enable "Places API"
+  4. Create credentials → API Key
+
+#### **4. Run the development server**
+```bash
 npm run dev
+```
+
+The application will be available at **http://localhost:3000**
+
+#### **5. Build for production** (optional)
+```bash
+npm run build
+npm start
 ```
 
 ### **Usage**
@@ -303,7 +330,7 @@ npm run dev
 - 9-dimensional program values analysis (AI analyzes mission, content, descriptions)
 - 4-factor personalized match scoring (interests, strengths, needs, budget)
 - Transparent match reasons for explainability
-- One-click application URL extraction
+- Direct application links for easy signup
 
 **Impact:** Helps kids find programs where they'll thrive, not just attend
 
@@ -359,8 +386,9 @@ This project was built for the Anthropic AI Hackathon, but contributions are wel
 ## 📧 Contact
 
 **Built by:** Taha Khan
-**GitHub:** https://github.com/YOUR_USERNAME/kids-programs-finder
+**GitHub:** https://github.com/CodingByTahaK/ActivityScout
+**Live Demo:** [Coming Soon - Deploy to Vercel]
 
 ---
 
-**OpportunityMatch AI** - Because every child deserves their perfect match. 🎯
+**ActivityScout** - Because every child deserves their perfect match. 🎯

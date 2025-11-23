@@ -274,12 +274,12 @@ export default function Home() {
             className="max-w-3xl px-6 md:px-8"
           >
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-6 text-center">
-              Find <span className="text-[#00ff88] font-bold">hidden opportunities</span>,{' '}
-              understand what <span className="text-[#08d9d6] font-bold">programs value</span>, and{' '}
-              apply with <span className="text-[#ff2e63] font-bold">AI-crafted applications</span> that win
+              Find programs <span className="text-[#00ff88] font-bold">kids love</span>.{' '}
+              Parents can <span className="text-[#08d9d6] font-bold">afford</span>.{' '}
+              Applications made <span className="text-[#ff2e63] font-bold">easy</span>.
             </p>
             <p className="text-base md:text-lg text-gray-400 italic text-center max-w-2xl">
-              Leveling the playing field for all families — making quality programs accessible and applications achievable
+              Making quality programs accessible to all families through smart search and personalized matching
             </p>
             <div className="flex items-center justify-center gap-3 text-sm text-gray-400 flex-wrap mt-6">
               <motion.div
@@ -299,7 +299,7 @@ export default function Home() {
                 animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 1 }}
               />
-              <span>AI Application Assistant</span>
+              <span>Quick Applications</span>
             </div>
           </motion.div>
         </motion.header>
