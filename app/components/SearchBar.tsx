@@ -42,10 +42,12 @@ export default function SearchBar({ onSearch, isLoading, disabled = false }: Sea
 
     setError('');
 
-    const locationWithRadius: LocationData = {
-      ...location,
-      radius: radius > 0 ? radius : undefined, // 0 means "any distance"
-    };
+    const locationWithRadius: LocationData = radius > 0
+      ? ({
+          ...location,
+          radius,
+        } as LocationData)
+      : location;
 
     const searchParams: {
       query: string;

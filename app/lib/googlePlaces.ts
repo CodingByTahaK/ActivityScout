@@ -80,7 +80,7 @@ export class GooglePlacesService {
       const response = await client.findPlaceFromText({
         params: {
           input: query,
-          inputtype: 'textquery',
+          inputtype: 'textquery' as any,
           fields: ['place_id', 'name', 'rating', 'user_ratings_total'],
           key: this.apiKey,
         },
@@ -110,7 +110,7 @@ export class GooglePlacesService {
         const response2 = await client.findPlaceFromText({
           params: {
             input: query,
-            inputtype: 'textquery',
+            inputtype: 'textquery' as any,
             fields: ['place_id', 'name', 'rating', 'user_ratings_total'],
             key: this.apiKey,
           },
