@@ -2,10 +2,10 @@
 
 An AI-powered search tool that helps parents find recreational programs for their kids, with a focus on surfacing financial aid that conventional search misses.
 
-Built for the U of T Anthropic Hackathon 2025, Track 2 (Human-Centered AI).
+Built over a weekend for the U of T Anthropic Hackathon 2025, Track 2 (Human-Centered AI). Not maintained since — the code and architecture described below reflect the state at submission.
 
-<!-- TODO: add a screenshot here. A single image of the results view with match scores
-     and affordability badges visible does more than the rest of this README combined. -->
+<img width="1242" height="867" alt="image" src="https://github.com/user-attachments/assets/767352dd-ad26-419d-8f5c-443a31fcecb4" />
+
 
 ---
 
@@ -166,23 +166,10 @@ Note that each search issues multiple web search calls, so expect real API cost 
 
 ## What I'd do differently
 
-<!-- TODO: replace these with your own. This section is the most useful part of the
-     README for anyone evaluating you — it shows you can assess your own work.
-     Two or three honest items beat ten generic ones. Some candidates below; keep
-     only the ones you actually believe. -->
-
-- **The scoring weights are unvalidated.** The 40/40/10/10 split was chosen by intuition during a hackathon, not derived from any feedback data. Without parents rating whether matches were good, there's no evidence this weighting beats a simpler one.
+- **The scoring weights are unvalidated.** The 40/40/10/10 split was chosen by intuition during the hackathon, not derived from feedback data. Without parents rating whether matches were good, there's no evidence this weighting beats a simpler one.
 - **No caching.** Identical searches re-run the full multi-search pipeline, which is slow and costs real money. A cache keyed on query plus location plus filters would cut both substantially.
-- **Extraction isn't verified.** The model returns structured cost and financial-aid data read off program websites, but nothing validates it against the source. A wrong `hasFinancialAid: true` sends a family down a dead end, which is worse than omitting the program.
+- **Extraction isn't verified.** The model returns structured cost and financial-aid data read off program websites, but nothing validates it against the source. A wrong `hasFinancialAid: true` sends a family down a dead end, which is worse than omitting the program entirely.
 - **No tests.** Match scoring is pure and deterministic, so it's the obvious place to start.
-
----
-
-## License
-
-<!-- TODO: the previous README claimed MIT but there is no LICENSE file in the repo.
-     Either add one (github.com/new → Add a license, or copy the MIT text into
-     LICENSE) or delete this section. Don't claim a license you haven't included. -->
 
 ---
 
